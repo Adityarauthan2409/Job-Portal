@@ -1,0 +1,73 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'nav.html' %}
+
+<div class="container-fluid" style="margin-top: 1%">
+    <img src="{% static 'images/faj.jpg' %}" style="height: 450px; width: 100%;">
+</div>
+
+<div class="container" style="background-color: aquamarine; height: 450px; margin-top: 3%;">  
+    <div class="text" style="text-align: center; color: crimson;">
+        <h3><u>Our Top Recruiters</u></h3>
+        <hr>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/it1.jpg' %}" class="card-img-top" style="height: 100px; width: 350px;">
+                <div class="card-body">
+                  <h5 class="card-title">Lorem Ipsum</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/it2.jpg' %}" class="card-img-top" style="height: 100px; width: 350px;">
+                  <div class="card-body">
+                    <h5 class="card-title">ITC</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/it3.jpg' %}" class="card-img-top" style="height: 100px; width: 350px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Infosys</h5>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <hr>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/it4.jpg' %}" class="card-img-top" style="height: 100px; width: 350px;">
+                <div class="card-body">
+                  <h5 class="card-title">IBM</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/it5.jpg' %}" class="card-img-top" style="height: 100px; width: 350px;">
+                  <div class="card-body">
+                    <h5 class="card-title">HP</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/it6.jpg' %}" class="card-img-top" style="height: 100px; width: 350px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Concentrix</h5>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

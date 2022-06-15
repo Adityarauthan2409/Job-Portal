@@ -1,0 +1,26 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'admin_nav.html' %}
+
+<div class="container mt-5">
+    <br><br>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card bg-dark text-white">
+            <h4 class="text-center">Total Recruiters</h4>
+            <p class="text-center">{{rcount}}</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-dark text-white">
+            <h4 class="text-center">Total Users</h4>
+            <p class="text-center">{{scount}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

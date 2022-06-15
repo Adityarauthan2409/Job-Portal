@@ -1,0 +1,45 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'nav.html' %}
+<hr>
+
+<div class="container">
+<table class="table table-hover" id="example">
+    <thead>
+        <tr style="background-color: darkolivegreen;">
+            <th>S.NO.</th>
+            <th>Job Title</th>
+            <th>Company Name</th>
+            <th>Location</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in job %}
+        <tr style="background-color: blueviolet;">
+            <td>{{forloop.counter}}</td>
+            <td>{{i.recruiter.company}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.startdate}}</td>
+            <td>{{i.enddate}}</td>
+
+            {% if i.id in li %}
+            <td>Applied</td>
+
+            {% else %}
+            <td><a href="{% url 'job_detail' i.id %}" class="btn btn-success btn-sm">Apply</a></td>
+            {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

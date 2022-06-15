@@ -1,0 +1,40 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'user_nav.html' %}
+<hr>
+
+<div class="container">
+   <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       <div class="form-row">
+            <label>Upload Resume</label>
+            <input type="file" class="form-control" name="resume">
+       </div>
+       <input type="submit" value="submit" class="btn btn-primary mt-3">
+   </form>
+</div>
+
+{% ifequal error "close" %}
+<script>
+    alert("applications are closed")
+    window.location = ('{% url "user_latestjobs" %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "notopen" %}
+<script>
+    alert("applications are not open yet")
+    window.location = ('{% url "user_latestjobs" %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "done" %}
+<script>
+    alert("application submitted successfully")
+    window.location = ('{% url "user_latestjobs" %}')
+</script>
+{% endifequal %}
+
+{% endblock %}
